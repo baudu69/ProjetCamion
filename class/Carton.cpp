@@ -6,5 +6,5 @@
 
 Carton::Carton(int largeur, int longueur, int hauteur)
         : _largeur(largeur), _longueur(longueur), _hauteur(hauteur) {
-    this->_volume = longueur*largeur*hauteur;
+    this->_volume = ((double)longueur/100)*((double)largeur/100)*((double)hauteur/100);
 };
