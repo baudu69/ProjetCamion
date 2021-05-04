@@ -8,12 +8,13 @@
 
 #include "Camion.h"
 #include "Carton.h"
+#include <vector>
 
 class Lecture {
 
 public:
     static Camion* getCamion();
-    static Carton* getCarton();
+    static std::vector<Carton> getCarton();
 private:
 
 

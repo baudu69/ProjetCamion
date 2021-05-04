@@ -3,7 +3,7 @@
 
 int main() {
     Camion *unCamion = Lecture::getCamion();
-    Carton *lesCartons = Lecture::getCarton();
+    std::vector<Carton> lesCartons = Lecture::getCarton();
     std::cout << lesCartons[1].getHauteur() << std::endl;
     return 0;
 }

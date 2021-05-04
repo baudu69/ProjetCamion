@@ -4,6 +4,7 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include <vector>
 #include "Lecture.h"
 #include "Camion.h"
 
@@ -34,7 +35,7 @@ Camion* Lecture::getCamion() {
     }
 }
 
-Carton* Lecture::getCarton() {
+std::vector<Carton> Lecture::getCarton() {
     ifstream fichier("../entree.txt");
 
     if (fichier) {
@@ -47,7 +48,8 @@ Carton* Lecture::getCarton() {
             nbLignes++;
         }
 
-        Carton* listCartons[--nbLignes];
+        std::vector<Carton> listCartons;
+        listCartons.reserve(--nbLignes);
 
         string ligne; //Une variable pour stocker les lignes lues
         getline(fichier, ligne); //Tant qu'on n'est pas à la fin, on lit
@@ -67,11 +69,11 @@ Carton* Lecture::getCarton() {
             int int_largeur = std::stoi(largeur);
             int int_hauteur = std::stoi(hauteur);
 
-            listCartons[i] = new Carton(int_largeur, int_longueur, int_hauteur);
+            listCartons.emplace_back(int_largeur, int_longueur, int_hauteur);
             i++;
         }
 
-        return *listCartons;
+        return listCartons;
 
     }
 }
