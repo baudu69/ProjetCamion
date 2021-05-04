@@ -13,11 +13,13 @@ public:
     int getLargeur() { return _largeur; }
     int getLongueur() { return _longueur; }
     int getHauteur() { return _hauteur; }
+    int getVolume() { return _volume; }
 
 private:
     int _largeur;
     int _longueur;
     int _hauteur;
+    int _volume;
 };
 
 #endif //PROJET_CARTON_H

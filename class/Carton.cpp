@@ -5,4 +5,6 @@
 #include "Carton.h"
 
 Carton::Carton(int largeur, int longueur, int hauteur)
-        : _largeur(largeur), _longueur(longueur), _hauteur(hauteur) {};
+        : _largeur(largeur), _longueur(longueur), _hauteur(hauteur) {
+    this->_volume = longueur*largeur*hauteur;
+};
